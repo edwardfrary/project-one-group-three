@@ -64,41 +64,42 @@ function renderTasks(traceID, taskObj) {
   $("#noticeboard-body").append(cardCellEl);
 };
 
-//function to handle deleting tasks from the DOM, the dataArr and localstorage
+//function to handle deleting tasks from the DOM, the task array and localstorage
 function deleteTask(deletionIndex) {
   var deleteTaskByID = "#" + deletionIndex;
   $(deleteTaskByID).remove();
 
   //removes the task from the array and then saves the new array
-  var index = $.inArray(deletionIndex, taskArr);
-  taskArr.splice(index, 1);
-  localStorage.setItem("data", JSON.stringify(taskArr));
-  loadTask();
   console.log(taskArr);
+  var index = $.inArray(deletionIndex, taskArr);
+   taskArr.splice(index, 1);
+  localStorage.setItem("data", JSON.stringify(taskArr));
+
 };
 
 function saveTask(taskObj) {
 
   //first load up the previous data
-  var dataArr = JSON.parse(localStorage.getItem("data"));
-  if (!dataArr) {
-    dataArr = [];
+  taskArr = JSON.parse(localStorage.getItem("data"));
+  if (!taskArr) {
+    taskArr = [];
   };
   //push in the new data and then save it to local storage
-  dataArr.push(taskObj);
-  localStorage.setItem("data", JSON.stringify(dataArr));
+  taskArr.push(taskObj);
+  localStorage.setItem("data", JSON.stringify(taskArr));
 };
 
 function loadTask() {
 
   //load the previously saved data
-  var dataArr = JSON.parse(localStorage.getItem("data"));
-  if (!dataArr) {
-    dataArr = [];
+  taskArr = JSON.parse(localStorage.getItem("data"));
+  if (!taskArr) {
+    taskArr = [];
   };
+
   //for loop to render each object, increment the tracer by 1 to give each card a unique ID
-  for (i = 0; i < dataArr.length; i++) {
-    renderTasks(traceID, dataArr[i]);
+  for (i = 0; i < taskArr.length; i++) {
+    renderTasks(traceID, taskArr[i]);
     traceID++;
   };
 };
