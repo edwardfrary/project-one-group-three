@@ -31,7 +31,9 @@
     margin-bottom:5px;
     overflow-y:scroll;
 }
-
+.main-body.browser{
+    overflow-y:unset;
+}
 .search-bar{
     background-color:darkgray;
     height: 40px;
