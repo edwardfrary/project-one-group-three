@@ -18,22 +18,43 @@
 </head>
 
 <body>
-    <!-- Main content container -->
+    <!-- HEADER -->
+    <header class="top-bar">
+        <!-- HEADER TEXT -->
+        <div>
+            <h1 class="top-bar-left">Project One - Group 3</h1>
+        </div>
+
+        <!-- ADD TASK BUTTON-->
+        <div>
+            <button type="button" class="top-bar-right success button" id="addtask-btn"><i
+                    class="material-icons">add</i></button>
+        </div>
+    </header>
+
+    <!-- MAIN BODY OF THE WEBSITE -->
     <main class="grid-container fluid">
-     
-        <!-- HEADER -->
-        <header class="top-bar">
-            <!-- HEADER TEXT -->
-            <div>
-                <h1 class="cell small-11">Project One - Group 3</h1>
+        <div class="grid-x">
+            <!-- LEFT HAND COLUMN -->
+            <div class="cell medium-4">
+                <!--TITLE OF LEFT COLUMN -->
+                <div class = "title-header" id="email-header"><span>GMAIL</span>
+                </div>
+                <!-- BODY OF LEFT COLUMN -->
+                <div class = "main-body" id="email-body">
+                </div>
             </div>
 
-            <!-- ADD TASK BUTTON-->
-            <div>
-                <button type="button" class="success button" id="addtaskbtn"><i class="material-icons">add</i></button>
+            <!-- RIGHT HAND COLUMN -->
+            <div class="cell medium-8">
+                <!-- TITLE OF RIGHT COLUMN -->
+                <div class = "title-header" id="noticeboard-header"><span>NOTES</span>
+                </div>
+                <!-- BODY OF RIGHT COLUMN -->
+                <div class="main-body" id="noticeboard-body">
+                </div>
             </div>
-        </header>
-
+        </div>
     </main>
 
     <!-- SCRIPTS -->

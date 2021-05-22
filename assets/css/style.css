@@ -1,0 +1,18 @@
+.button {
+    border-radius:50%;
+}
+
+.top-bar {
+    background-color: darkgray;
+    color:white;
+    text-shadow:2px 2px black;
+    text-align: center;
+}
+.title-header {
+    background-color: lightgrey;
+    text-align: center;
+}
+
+.main-body {
+    border-style:solid;
+}
