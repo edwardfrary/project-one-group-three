@@ -14,9 +14,26 @@
 }
 .title-header {
     background-color: lightgrey;
+    font-weight:bold;
     text-align: center;
 }
 
 .main-body {
+    display:flex;
+    min-height: 500px;
     border-style:solid;
+}
+
+.card {
+    box-shadow:2px 2px black;
+}
+
+.card-divider {
+    background-color:darkcyan;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.card-section{
+    text-align:center;
 }

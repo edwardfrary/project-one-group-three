@@ -29,7 +29,8 @@
 
         <!-- OPEN MODAL TO ADD TASK BUTTON -->
         <div>
-            <a class="top-bar-right success button" rel="modal:open" href="#taskModal"><i class="material-icons">add</i></a>
+            <a class="top-bar-right success button" rel="modal:open" href="#taskModal"><i
+                    class="material-icons">add</i></a>
         </div>
     </header>
 
@@ -43,6 +44,9 @@
                 </div>
                 <!-- BODY OF LEFT COLUMN -->
                 <div class="main-body" id="email-body">
+                    <button id="authorize_button" style="display: none;">Authorize</button>
+                    <button id="signout_button" style="display: none;">Sign Out</button>
+                    <pre id="content" style="white-space: pre-wrap;"></pre>
                 </div>
             </div>
 
@@ -52,7 +56,9 @@
                 <div class="title-header" id="noticeboard-header"><span>NOTES</span>
                 </div>
                 <!-- BODY OF RIGHT COLUMN -->
-                <div class="main-body" id="noticeboard-body">
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x small-up-2 medium-up-3 main-body" id="noticeboard-body">
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,19 +66,20 @@
 
     <!-- MODAL -->
     <div class="modal" id="taskModal">
-        
+
         <h3>ADD A TASK</h3>
         <form>
-        <!-- TITLE FOR THE TASK -->
-        <label for = "taskmodal-header">Title</label>
-        <input type="text" id="taskmodal-header">
-        <!-- BODY OF THE TASK -->
-        <label for = "taskmodal-body">Enter your note here....</label>
-        <input type="text" id="taskmodal-body">
+            <!-- TITLE FOR THE TASK -->
+            <label for="taskmodal-header">Title</label>
+            <input type="text" id="taskmodal-header">
+            <!-- BODY OF THE TASK -->
+            <label for="taskmodal-body">Enter your note here....</label>
+            <input type="text" id="taskmodal-body">
         </form>
 
         <!-- SAVE BUTTON -->
-        <button type="button" class="success button" id = "tasksubmit"><i class="material-icons">done</i></button>
+        <a type="button" class="success button" id="tasksubmit" href="#" rel="modal:close"><i
+                class="material-icons">done</i></a>
     </div>
 
     <!-- SCRIPTS -->
