@@ -25,10 +25,32 @@
 
 .main-body {
     min-height: 80vh;
+    max-height:80vh;
     background:paleturquoise;
     border-style:solid;
     margin-bottom:5px;
     overflow-y:scroll;
+}
+
+.search-bar{
+    background-color:darkgray;
+    height: 40px;
+    box-shadow: 2px 2px black;
+}
+
+
+
+.search-box{
+    margin:0px;
+    padding:18px;
+}
+
+.icon-holder{
+    text-align:center;
+}
+
+.search-icon{
+font-size: 40px;
 }
 
 .grid-x {

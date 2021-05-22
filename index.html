@@ -40,13 +40,23 @@
             <!-- LEFT HAND COLUMN -->
             <div class="cell medium-8">
                 <!--TITLE OF LEFT COLUMN -->
-                <div class="title-header" id="email-header"><span>GMAIL</span>
+                <div class="title-header" id="browser-header"><span>Browser</span>
                 </div>
                 <!-- BODY OF LEFT COLUMN -->
-                <div class="main-body" id="email-body">
-                    <button id="authorize_button" style="display: none;">Authorize</button>
-                    <button id="signout_button" style="display: none;">Sign Out</button>
-                    <pre id="content" style="white-space: pre-wrap;"></pre>
+                <div class="main-body" id="browser-body">
+                    <div class="grid-x search-bar">
+                        <div class="cell medium-11">
+                            <form action="https://www.google.com/search" class="search-form" method="get"
+                                name="searchform" target="_blank">
+                                <input autocomplete="on" class="search-box" name="q" placeholder="Search the web..."
+                                    required="required" type="text">
+                        </div>
+                        <div class="cell medium-1 icon-holder">
+                            <button class="search-button" type="submit"><i
+                                    class="material-icons search-icon">search</i></button>
+                        </div>
+                        </form>
+                    </div>
                 </div>
             </div>
 
