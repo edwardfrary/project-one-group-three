@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project One - Group 3 - Notice Board with Email Functionality</title>
-    <!-- CSS LINKS -->
+
     <!-- Google Icon Font -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- JQuery Modal CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <!-- Foundation CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
@@ -25,10 +27,9 @@
             <h1 class="top-bar-left">Project One - Group 3</h1>
         </div>
 
-        <!-- ADD TASK BUTTON-->
+        <!-- OPEN MODAL TO ADD TASK BUTTON -->
         <div>
-            <button type="button" class="top-bar-right success button" id="addtask-btn"><i
-                    class="material-icons">add</i></button>
+            <a class="top-bar-right success button" rel="modal:open" href="#taskModal"><i class="material-icons">add</i></a>
         </div>
     </header>
 
@@ -38,17 +39,17 @@
             <!-- LEFT HAND COLUMN -->
             <div class="cell medium-4">
                 <!--TITLE OF LEFT COLUMN -->
-                <div class = "title-header" id="email-header"><span>GMAIL</span>
+                <div class="title-header" id="email-header"><span>GMAIL</span>
                 </div>
                 <!-- BODY OF LEFT COLUMN -->
-                <div class = "main-body" id="email-body">
+                <div class="main-body" id="email-body">
                 </div>
             </div>
 
             <!-- RIGHT HAND COLUMN -->
             <div class="cell medium-8">
                 <!-- TITLE OF RIGHT COLUMN -->
-                <div class = "title-header" id="noticeboard-header"><span>NOTES</span>
+                <div class="title-header" id="noticeboard-header"><span>NOTES</span>
                 </div>
                 <!-- BODY OF RIGHT COLUMN -->
                 <div class="main-body" id="noticeboard-body">
@@ -57,12 +58,29 @@
         </div>
     </main>
 
+    <!-- MODAL -->
+    <div class="modal" id="taskModal">
+        
+        <h3>ADD A TASK</h3>
+        <form>
+        <!-- TITLE FOR THE TASK -->
+        <label for = "taskmodal-header">Title</label>
+        <input type="text" id="taskmodal-header">
+        <!-- BODY OF THE TASK -->
+        <label for = "taskmodal-body">Enter your note here....</label>
+        <input type="text" id="taskmodal-body">
+        </form>
+
+        <!-- SAVE BUTTON -->
+        <button type="button" class="success button" id = "tasksubmit"><i class="material-icons">done</i></button>
+    </div>
+
     <!-- SCRIPTS -->
-    <!-- Foundation JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <!-- JQuery 3.6 -->
+    <!-- JQuery 3.6  and JQuery Modal-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <!-- Foundation JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.core.min.js"></script>
     <!-- Project JS -->
     <script type="text/javascript" src="assets/javascript/jscript.js"></script>
 </body>

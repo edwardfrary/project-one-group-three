@@ -3,10 +3,14 @@
 }
 
 .top-bar {
-    background-color: darkgray;
+    background-color: rgb(56, 56, 56);
     color:white;
     text-shadow:2px 2px black;
     text-align: center;
+}
+
+.top-bar-right {
+    text-shadow:none;
 }
 .title-header {
     background-color: lightgrey;
