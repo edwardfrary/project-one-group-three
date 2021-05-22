@@ -2,7 +2,7 @@
 var taskTitle = "";
 var taskBody = "";
 var taskArr = [];
-var taskNumber = 0;
+var traceID = 0;
 
 //Handler for creating a new task by clicking the add task button
 $("#tasksubmit").on("click", function () {
@@ -13,32 +13,35 @@ $("#tasksubmit").on("click", function () {
 
   //Object creation to hold the inputted values
   var taskObj = {
+    id: traceID,
     title: taskTitle,
     body: taskBody,
   };
- 
-  //load previous task array, push the new object into it then save the array into local storage
-  renderTasks(taskObj);
+
+
+  //render the modal task input then save the new data.
+  renderTasks(traceID, taskObj);
+  traceID++;
   saveTask(taskObj);
-  
   //reset the modals text boxes
- $(".modal-text-title")
- .val("");
+  $(".modal-text-title")
+    .val("");
 
- $(".modal-text-body")
- .val("");
+  $(".modal-text-body")
+    .val("");
 
-});
-
-//Handler for the delete tasks button
-$(document).on("click", ".delete-button", function () {
-  $(this).closest(".cell").remove();
 });
 
 //Function to render the cards using the input from either the modal text boxes OR from local storage memory
-function renderTasks(taskObj) {
+function renderTasks(traceID, taskObj) {
+
+  //handler to insert the "onClick" functionality to the delete button
+  var deleteBtnHandler = "deleteTask(" + traceID + ")";
+
+
   //create the card container and then the other elements of the card
   var cardCellEl = $("<div>")
+    .attr("id", traceID)
     .addClass("cell");
   var cardContainerEl = $("<div>")
     .addClass("card");
@@ -47,6 +50,7 @@ function renderTasks(taskObj) {
     .text(taskObj.title);
   var cardDeleteEl = $("<a>")
     .addClass("delete-button")
+    .attr("onClick", deleteBtnHandler)
     .attr("style", "color:red;")
     .html("<i class='material-icons'>clear</i>");
   var cardBodyEl = $("<div>")
@@ -58,6 +62,19 @@ function renderTasks(taskObj) {
   $(cardContainerEl).append(cardBodyEl);
   $(cardCellEl).append(cardContainerEl);
   $("#noticeboard-body").append(cardCellEl);
+};
+
+//function to handle deleting tasks from the DOM, the dataArr and localstorage
+function deleteTask(deletionIndex) {
+  var deleteTaskByID = "#" + deletionIndex;
+  $(deleteTaskByID).remove();
+
+  //removes the task from the array and then saves the new array
+  var index = $.inArray(deletionIndex, taskArr);
+  taskArr.splice(index, 1);
+  localStorage.setItem("data", JSON.stringify(taskArr));
+  loadTask();
+  console.log(taskArr);
 };
 
 function saveTask(taskObj) {
@@ -73,14 +90,16 @@ function saveTask(taskObj) {
 };
 
 function loadTask() {
-  //load the previously saved tasks
+
+  //load the previously saved data
   var dataArr = JSON.parse(localStorage.getItem("data"));
   if (!dataArr) {
     dataArr = [];
   };
   //for loop to render each object, increment the tracer by 1 to give each card a unique ID
   for (i = 0; i < dataArr.length; i++) {
-    renderTasks(dataArr[i]);
+    renderTasks(traceID, dataArr[i]);
+    traceID++;
   };
 };
 
