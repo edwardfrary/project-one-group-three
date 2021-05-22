@@ -44,10 +44,11 @@
                 </div>
                 <!-- BODY OF LEFT COLUMN -->
                 <div class="main-body" id="browser-body">
+                    <!-- SEARCH BAR AND FUNCTIONALITY -->
                     <div class="grid-x search-bar">
                         <div class="cell medium-11">
-                            <form action="https://www.google.com/search" class="search-form" method="get"
-                                name="searchform" target="_blank">
+                            <form action="https://www.bing.com/search" class="search-form" method="get"
+                                name="search-form" target="iframe_browser">
                                 <input autocomplete="on" class="search-box" name="q" placeholder="Search the web..."
                                     required="required" type="text">
                         </div>
@@ -57,6 +58,10 @@
                         </div>
                         </form>
                     </div>
+
+                    <!-- BROWSER DISPLAY -->
+                    <iframe src="" style="height:100vh; width:100%;" title="browser functionality"
+                        name="iframe_browser"></iframe>
                 </div>
             </div>
 
