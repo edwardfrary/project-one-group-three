@@ -18,10 +18,25 @@
     text-align: center;
 }
 
+.grid-container.fluid {
+    margin:0px;
+    padding:0px;
+}
+
 .main-body {
-    display:flex;
-    min-height: 500px;
+    min-height: 80vh;
+    background:paleturquoise;
     border-style:solid;
+    margin-bottom:5px;
+    overflow-y:scroll;
+}
+
+.grid-x {
+    padding:0;
+}
+
+.cell{
+    height:fit-content;
 }
 
 .card {
