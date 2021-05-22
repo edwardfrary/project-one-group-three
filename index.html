@@ -9,8 +9,9 @@
     <!-- CSS LINKS -->
     <!-- Google Icon Font -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Materialize CSS Framework -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Foundation CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <!-- Project CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -18,22 +19,27 @@
 
 <body>
     <!-- Main content container -->
-    <main class="container">
+    <main class="grid-container fluid">
+     
         <!-- HEADER -->
-        <div class="row">
-            <!-- Header Text -->
-            <header class="col s12">
-                <h1 class="z-depth-3">Project One - Group 3</h1>
-                <!-- Header ADD TASK button -->
-                <a class="btn-floatinf btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
-            </header>
-        </div>
+        <header class="top-bar">
+            <!-- HEADER TEXT -->
+            <div>
+                <h1 class="cell small-11">Project One - Group 3</h1>
+            </div>
+
+            <!-- ADD TASK BUTTON-->
+            <div>
+                <button type="button" class="success button" id="addtaskbtn"><i class="material-icons">add</i></button>
+            </div>
+        </header>
 
     </main>
 
     <!-- SCRIPTS -->
-    <!-- Materialize CSS Framework-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Foundation JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <!-- JQuery 3.6 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Project JS -->
