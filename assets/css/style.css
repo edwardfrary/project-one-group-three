@@ -40,8 +40,6 @@
     box-shadow: 2px 2px black;
 }
 
-
-
 .search-box{
     margin:0px;
     padding:18px;
@@ -68,9 +66,14 @@ font-size: 40px;
 }
 
 .card-divider {
+    justify-content:space-between;
     background-color:darkcyan;
     color: white;
     text-shadow: 2px 2px black;
+}
+
+.delete-button i{
+    font-size:25px;
 }
 
 .card-section{
